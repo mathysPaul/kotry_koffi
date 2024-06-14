@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/kotry_koffi/static/css/main.f71c8964.css",
+    "main.js": "/kotry_koffi/static/js/main.7fe58db3.js",
+    "static/js/453.b6095ae8.chunk.js": "/kotry_koffi/static/js/453.b6095ae8.chunk.js",
+    "static/media/Comic_CAT.otf": "/kotry_koffi/static/media/Comic_CAT.a380a424826d21d30fb7.otf",
+    "static/media/image_home.avif": "/kotry_koffi/static/media/image_home.5689434678316c88e7de.avif",
+    "static/media/image_gallery_0.avif": "/kotry_koffi/static/media/image_gallery_0.be44a1cf023e7bbf2f18.avif",
+    "static/media/image_gallery_2.avif": "/kotry_koffi/static/media/image_gallery_2.ffe23768101e2d614bf1.avif",
+    "static/media/banner.avif": "/kotry_koffi/static/media/banner.686b89870bad4bc69871.avif",
+    "static/media/image_gallery_1.avif": "/kotry_koffi/static/media/image_gallery_1.4a99917533a078f1e434.avif",
+    "static/media/image_gallery_3.avif": "/kotry_koffi/static/media/image_gallery_3.e9b4b93329ff97707855.avif",
+    "static/media/icon_insta.avif": "/kotry_koffi/static/media/icon_insta.d65d0dbc9f0095d65dd0.avif",
+    "static/media/logo240.avif": "/kotry_koffi/static/media/logo240.0f52883b255e355f4f99.avif",
+    "index.html": "/kotry_koffi/index.html",
+    "main.f71c8964.css.map": "/kotry_koffi/static/css/main.f71c8964.css.map",
+    "main.7fe58db3.js.map": "/kotry_koffi/static/js/main.7fe58db3.js.map",
+    "453.b6095ae8.chunk.js.map": "/kotry_koffi/static/js/453.b6095ae8.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f71c8964.css",
+    "static/js/main.7fe58db3.js"
+  ]
+}
