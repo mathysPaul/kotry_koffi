@@ -1,55 +1,19 @@
 @import "node_modules/bootstrap/scss/bootstrap";
-$btn-border-radius: 0;
+
+/////////////////////////////////////////
+// Theme
+/////////////////////////////////////////
 $btn-font-family: 'Comic CAT';
 $primary: #1a1917;
 $theme-colors: (
 	"primary": $primary,
 );
-// $btn-hover-change-bg: 50%;
-// $btn-color: white;
-// $btn-hover-bg: #00c3ff;
-// $link-hover-color: #ffaa00;
 
-// $btn-secondary-bg: #00c3ff;
-// $btn-bg: #00ffc8;
-// $btn-color:                   green;
-// // $btn-padding-y:               200px;
-// // $btn-padding-x:               600px;
-// // $btn-font-size:               200px;
-// $hover-background: red;
-// $btn-box-shadow:              0 0 20px 20px red;
-// $btn-focus-box-shadow:        0 0 20px 20px green;
-// // $btn-disabled-opacity:        .65;
-// $btn-active-box-shadow:       0 0 20px 20px red;
-
-// $btn-link-color:              rgb(255, 81, 0);
-// $btn-link-hover-color:        red;
-// $btn-link-disabled-color:     blue;
-
-// // Allows for customizing button radius independently from global border radius
-// $btn-border-radius:           0;
-// $btn-border-radius-sm:        0;
-// $btn-border-radius-lg:        0;
-
-// // $btn-transition:              color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
-
-// $btn-hover-bg-shade-amount:       0%;
-// $btn-hover-bg-tint-amount:        0%;
-// $btn-hover-border-shade-amount:   100%;
-// $btn-hover-border-tint-amount:    100%;
-// $btn-active-bg-shade-amount:      100%;
-// $btn-active-bg-tint-amount:       100%;
-// $btn-active-border-shade-amount:  100%;
-// $btn-active-border-tint-amount:   100%;
-
-
-// // $btn-hover-bg-shade-amount: #fff;
-// $btn-hover-bg-tint-amount: #790079;
-// // button.btn {
-// // 	@include button-variant($white,$white);
-// // }
-// $feature-bg: #ffd803;
-
+/////////////////////////////////////////
+// Button
+/////////////////////////////////////////
+$btn-border-radius: 0;
+// Button primary
 $background: $primary;
 $border: $background;
 
@@ -66,13 +30,26 @@ button.btn-primary {
   );
 }
 
+/////////////////////////////////////////
+// Accordion Custom
+/////////////////////////////////////////
+$accordion-button-focus-box-shadow: 'none';
+// Accordion border
+$accordion-border-radius: 0;
+$accordion-inner-border-radius: 0;
+$accordion-border-width: 0;
+
+// Accordion color
+$accordion-bg:                            #EAEAEA;
+$accordion-button-bg:                     white;
+$accordion-button-active-bg:              $primary;
+$accordion-button-active-color:           white;
+
+// Accordion icon
+$accordion-icon-active-color: white;
+$accordion-icon-color: $primary;
+$accordion-icon-transform: rotate(0deg);
+$accordion-button-icon: url("data:image/svg+xml,<svg width='7' height='6' viewBox='0 0 7 6' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M3.53711 5.42969C3.27148 5.42969 3.05273 5.39062 2.88086 5.3125C2.81836 4.86719 2.78711 4.42383 2.78711 3.98242C2.78711 3.82617 2.79102 3.66992 2.79883 3.51367C2.61523 3.51367 2.50195 3.50977 2.45898 3.50195C2.23242 3.47852 1.95117 3.4668 1.61523 3.4668C1.2793 3.4668 1.05859 3.45117 0.953125 3.41992L0.871094 3.02734C0.882812 2.94141 0.888672 2.86133 0.888672 2.78711L0.882812 2.58203C0.882812 2.46875 0.900391 2.3457 0.935547 2.21289C1.02148 2.18945 1.11523 2.17773 1.2168 2.17773L1.41602 2.18359L1.60352 2.17188C1.80273 2.15625 2.03125 2.14844 2.28906 2.14844L2.78711 2.16016C2.79492 1.96094 2.79883 1.85156 2.79883 1.83203C2.80273 1.80859 2.81055 1.68555 2.82227 1.46289C2.83398 1.31445 2.83984 1.15039 2.83984 0.970703C2.83984 0.650391 2.85156 0.433594 2.875 0.320312L3.27344 0.238281C3.35938 0.25 3.43945 0.255859 3.51367 0.255859L3.71875 0.244141C3.83203 0.244141 3.95508 0.263672 4.08789 0.302734C4.11523 0.388672 4.12891 0.484375 4.12891 0.589844L4.12305 0.777344L4.13477 0.970703C4.14648 1.15039 4.15234 1.35547 4.15234 1.58594C4.15234 1.76953 4.14844 1.9668 4.14062 2.17773C4.37109 2.17773 4.62305 2.18555 4.89648 2.20117C5.16992 2.21289 5.41016 2.22852 5.61719 2.24805C5.82422 2.26758 5.94336 2.28516 5.97461 2.30078C6.0332 2.41797 6.0625 2.57422 6.0625 2.76953C6.0625 3.02734 6.02734 3.24219 5.95703 3.41406C5.48438 3.48047 5.01562 3.51367 4.55078 3.51367C4.41406 3.51367 4.27734 3.50977 4.14062 3.50195H4.12305C4.12305 3.73242 4.11523 3.98633 4.09961 4.26367C4.08789 4.53711 4.07227 4.77734 4.05273 4.98438C4.03711 5.19141 4.01953 5.30859 4 5.33594C3.87891 5.39844 3.72461 5.42969 3.53711 5.42969Z' fill='#{$accordion-icon-color}'/></svg>");
+$accordion-button-active-icon: url("data:image/svg+xml,<svg width='7' height='6' viewBox='0 0 7 2' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M4.41602 1.67773C4.2168 1.67773 4.00781 1.67383 3.78906 1.66602C3.73828 1.66602 3.70117 1.66797 3.67773 1.67188C3.6582 1.67188 3.63672 1.67383 3.61328 1.67773C3.58984 1.68164 3.4707 1.68359 3.25586 1.68359H2.83398C2.64648 1.68359 2.51172 1.67969 2.42969 1.67188C2.39844 1.66406 2.28516 1.65625 2.08984 1.64844C1.98047 1.63672 1.82422 1.63086 1.62109 1.63086C1.33203 1.63086 1.12695 1.61719 1.00586 1.58984L0.929688 1.16797C0.941406 1.07812 0.947266 0.994141 0.947266 0.916016C0.947266 0.873047 0.945312 0.833984 0.941406 0.798828C0.9375 0.759766 0.935547 0.720703 0.935547 0.681641C0.935547 0.568359 0.953125 0.443359 0.988281 0.306641C1.06641 0.275391 1.15625 0.259766 1.25781 0.259766L1.45703 0.271484C1.51172 0.271484 1.56641 0.267578 1.62109 0.259766C1.79688 0.244141 2.00195 0.236328 2.23633 0.236328C2.60742 0.236328 3.06641 0.251953 3.61328 0.283203C3.6875 0.271484 3.80078 0.265625 3.95312 0.265625C4.17578 0.265625 4.44922 0.275391 4.77344 0.294922C5.36719 0.330078 5.69531 0.363281 5.75781 0.394531C5.8125 0.515625 5.83984 0.671875 5.83984 0.863281C5.83984 1.15625 5.80469 1.39453 5.73438 1.57812C5.29297 1.64453 4.85352 1.67773 4.41602 1.67773Z' fill='#{$accordion-icon-active-color}'/></svg>");
+
 @import "node_modules/bootstrap/scss/bootstrap";
-
-
-
-// button.btn {
-// 	@include button-variant(red, black, 120px);
-// }
-// button.btn {
-// 	--bs-btn-hover-bg: black;
-// }

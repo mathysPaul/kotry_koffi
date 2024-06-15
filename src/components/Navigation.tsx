@@ -4,7 +4,7 @@ import {
   Nav,
   Navbar,
 } from 'react-bootstrap';
-import logo from '../logo240.avif';
+import logo from '../logo.svg';
 
 const Toggle: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,8 +14,6 @@ const Toggle: React.FC = () => {
 
   const toggleClick = () => {
     setIsOpen(!isOpen);
-    console.log("isOpen");
-    console.log(isOpen);
   };
 
   return (
@@ -51,14 +49,14 @@ const Navigation: React.FC = () => {
   return (
     <Navbar expand="lg" className="bg-body-tertiary" sticky="top" style={{ borderBottom: 'solid 2px #ebebeb' }}>
       <Container>
-        <Navbar.Brand href="#home">
-          <img src={logo} alt="Logo" style={{height: '2rem'}}/>
+        <Navbar.Brand href="#/">
+          <img src={logo} alt="Logo" style={{height: '3rem'}}/>
         </Navbar.Brand>
         <Toggle/>
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="/#/about">Qui sommes nous ?</Nav.Link>
+            <Nav.Link href="#/">Home</Nav.Link>
+            <Nav.Link href="#/about">Qui sommes nous ?</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

@@ -7,11 +7,12 @@ import {
   Accordion,
 } from 'react-bootstrap';
 import Layout from '../components/Layout'
+import banner from '../assets/img/banner.avif';
 
 function AccordionInfo() {
   return (
     <Container>
-      <Accordion defaultActiveKey="0">
+      <Accordion>
         <Accordion.Item eventKey="0">
           <Accordion.Header>Ingredients</Accordion.Header>
           <Accordion.Body>
@@ -52,7 +53,7 @@ const Home: React.FC = () => {
   return (
     <Stack direction="vertical" gap={5}>
       <Container className='d-flex flex-column align-items-center gap-5'>
-        <h1 style={{ fontSize: 'min(160px, 20vmin)', textAlign: 'center', fontFamily: 'Comic CAT' }}>Kotry Koffi #1</h1>
+        <h1 style={{ fontSize: 'min(160px, 20vmin)', textAlign: 'center', fontFamily: 'Comic CAT' }}>Kotry Koffi</h1>
         <Image src={require('../assets/img/image_home.avif')} alt="Kotry Koffi bag" style={{aspectRatio: 1}} fluid />
         <p>
           Les meilleurs biscuits au marc de café ! 
@@ -67,7 +68,13 @@ const Home: React.FC = () => {
           ACHETEZ-LES ICI !
         </Button>
       </Container>
-      <Image src={require('../assets/img/banner.avif')} alt="Kotry Koffi Banner" fluid />
+      <div style={{
+        width: '100%',
+        height: '160px',
+        backgroundImage: `url(${banner})`,
+        backgroundRepeat: 'repeat-x',
+        backgroundSize: 'auto 100%'
+      }}/>
       <AccordionInfo/>
     </Stack>
   );
