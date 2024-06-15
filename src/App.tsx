@@ -1,19 +1,22 @@
 import React, { useState } from 'react';
 import logo from './logo240.avif';
+import {
+  Image,
+  Container,
+  Nav,
+  Navbar,
+  Row,
+  Col,
+  Stack,
+  Button,
+  Accordion,
+} from 'react-bootstrap';
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+import "./index.css";
 import './App.css';
-import Image from 'react-bootstrap/Image';
-
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-// import Image from 'react-bootstrap/Image';
-// import MenuIcon from './MenuIcon'; // Assurez-vous que le chemin d'importation est correct
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Stack from 'react-bootstrap/Stack';
-import { Button } from 'react-bootstrap';
-
-import Accordion from 'react-bootstrap/Accordion';
 
 function AccordionInfo() {
   return (
@@ -54,7 +57,6 @@ function AccordionInfo() {
     </Container>
   );
 }
-
 
 const Toggle: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -109,8 +111,8 @@ const Navigation: React.FC = () => {
         <Toggle/>
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#about-us">Qui sommes nous ?</Nav.Link>
+            <Nav.Link href="/">Home</Nav.Link>
+            <Nav.Link href="/about-us">Qui sommes nous ?</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
@@ -158,20 +160,6 @@ const AboutUs: React.FC = () => {
 }
 
 const Home: React.FC = () => {
-  // const [btnHover, setBtnHover] = useState(false);
-
-  // const button_style = {
-  //     backgroundColor: '#FF5733',
-  //     color: 'white',
-  //     borderRadius: '20px',
-  //     padding: '12px 24px',
-  //     margin: '10px',
-  //     transition: 'transform 0.3s ease',
-  //     transform: btnHover ? 'scale(1.2) rotate(-5deg)' : 'scale(1)',
-  //     boxShadow: btnHover
-  //         ? '0px 6px 12px rgba(0, 0, 0, 1)'
-  //         : '0px 4px 6px rgba(0, 0, 0, 0.1)',
-  // };
   return (
     <body style={{ minHeight: '100vh'}}>
       <Stack direction="vertical" gap={5}>
@@ -198,36 +186,77 @@ const Home: React.FC = () => {
   );
 }
 
-function App() {
+const Footer: React.FC = () => {
   return (
-    <div>
+    <footer className='bg-body-tertiary'>
+      <Container className='d-flex align-items-end justify-content-end mt-5' style={{ bottom: 0, width: '100%', height: '160px', position: 'relative' }}>
+        <a href='#top' style={{ position: 'absolute', bottom: '-3px', left: '-80px'}}>
+          <svg viewBox="0 0 800 100" style={{ width: '320px', maxWidth: '100%' }}>
+            <path d="M396.226 0C270.081 0 129.38 67.4034 0 100H800C636.119 67.4034 539.623 0 396.226 0Z" fill="black"/>
+            <text x="300" y="80" fill="white" style={{ fontSize: '3rem', fontFamily: 'Comic CAT' }}>To the Top</text>
+          </svg>
+        </a>
+        <a
+          href='https://www.instagram.com/le_kotry/?utm_source=ig_web_button_share_sheet'
+          style={{
+            marginBottom: '32px',
+            marginRight: '4vw',
+          }}
+        >
+          <Image width="60" src={require('./assets/img/icon_insta.avif')} alt="Icon Instagram" />
+        </a>
+      </Container>
+    </footer>
+  );
+}
+
+type LayoutProps = {
+  children?: React.ReactNode
+};
+
+const Layout: React.FC<LayoutProps> = (props) => {
+  return (
+    <>
       <header>
         <span id="top"/>
         <Navigation />
       </header>
-      <AboutUs/>
-      {/* <Home/> */}
-      <footer className='bg-body-tertiary'>
-        <Container className='d-flex align-items-end justify-content-end mt-5' style={{ bottom: 0, width: '100%', height: '160px', position: 'relative' }}>
-          <a href='#top' style={{ position: 'absolute', bottom: '-3px', left: '-80px'}}>
-            <svg viewBox="0 0 800 100" style={{ width: '320px', maxWidth: '100%' }}>
-              <path d="M396.226 0C270.081 0 129.38 67.4034 0 100H800C636.119 67.4034 539.623 0 396.226 0Z" fill="black"/>
-              <text x="300" y="80" fill="white" style={{ fontSize: '3rem', fontFamily: 'Comic CAT' }}>To the Top</text>
-            </svg>
-          </a>
-          <a
-            href='https://www.instagram.com/le_kotry/?utm_source=ig_web_button_share_sheet'
-            style={{
-              marginBottom: '32px',
-              marginRight: '4vw',
-            }}
-          >
-            <Image width="60" src={require('./assets/img/icon_insta.avif')} alt="Icon Instagram" />
-          </a>
-        </Container>
-      </footer>
-    </div>
+      {props.children}
+      <Footer/>
+    </>
   );
 }
 
+const PageHome: React.FC = () => {
+  return (
+    <Layout>
+      <Home/>
+    </Layout>
+  );
+}
+
+const PageAbout: React.FC = () => {
+  return (
+    <Layout>
+      <AboutUs/>
+    </Layout>
+  );
+}
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <PageHome/>,
+  },
+  {
+    path: "/about-us",
+    element: <PageAbout/>,
+  },
+]);
+
+function App() {
+  return (
+    <RouterProvider router={router} />
+  );
+}
 export default App;
