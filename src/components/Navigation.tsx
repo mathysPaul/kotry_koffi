@@ -1,0 +1,69 @@
+import React, { useState } from 'react';
+import {
+  Container,
+  Nav,
+  Navbar,
+} from 'react-bootstrap';
+import logo from '../logo240.avif';
+
+const Toggle: React.FC = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const toggleBarHeight = 0.2;
+  const toggleBarWidth = 2;
+  const toggleBarColor = 'black';
+
+  const toggleClick = () => {
+    setIsOpen(!isOpen);
+    console.log("isOpen");
+    console.log(isOpen);
+  };
+
+  return (
+    <Navbar.Toggle
+      style={{ boxShadow: 'none', border: 0, minHeight: '2rem' }}
+      aria-controls="basic-navbar-nav"
+      onClick={toggleClick}
+    >
+      <span style={{
+        height: `${toggleBarHeight}rem`,
+        width: `${toggleBarWidth}rem`,
+        marginBottom: isOpen ? 0 : `${toggleBarWidth/4}rem`,
+        backgroundColor: toggleBarColor,
+        display: 'block',
+        transform: isOpen ? `translate(0rem, ${toggleBarHeight/2}rem) rotate(45deg)` : '',
+        transitionDuration: '250ms',
+        borderRadius: 999,
+      }}/>
+      <span style={{
+        height: `${toggleBarHeight}rem`,
+        width: `${toggleBarWidth}rem`,
+        backgroundColor: toggleBarColor,
+        display: 'block',
+        transform: isOpen ? `translate(0rem, -${toggleBarHeight/2}rem) rotate(-45deg)` : '',
+        transitionDuration: '250ms',
+        borderRadius: 999,
+      }}/>
+    </Navbar.Toggle>
+  );
+}
+
+const Navigation: React.FC = () => {
+  return (
+    <Navbar expand="lg" className="bg-body-tertiary" sticky="top" style={{ borderBottom: 'solid 2px #ebebeb' }}>
+      <Container>
+        <Navbar.Brand href="#home">
+          <img src={logo} alt="Logo" style={{height: '2rem'}}/>
+        </Navbar.Brand>
+        <Toggle/>
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="me-auto">
+            <Nav.Link href="/">Home</Nav.Link>
+            <Nav.Link href="/about-us">Qui sommes nous ?</Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
+  );
+}
+
+export default Navigation;
