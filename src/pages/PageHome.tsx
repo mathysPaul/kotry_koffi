@@ -5,6 +5,8 @@ import {
   Stack,
   Button,
   Accordion,
+  Row,
+  Col,
 } from 'react-bootstrap';
 import Layout from '../components/Layout'
 import banner from '../assets/img/banner.avif';
@@ -16,7 +18,7 @@ function AccordionInfo() {
         <Accordion.Item eventKey="0">
           <Accordion.Header>Ingredients</Accordion.Header>
           <Accordion.Body>
-            Marc de café, beurre, œufs, sucre, beaucoup d'amour &lt;3
+            Marc de café, farine, beurre, œufs, sucre, beaucoup d'amour &lt;3
           </Accordion.Body>
         </Accordion.Item>
         <Accordion.Item eventKey="1">
@@ -51,24 +53,60 @@ function AccordionInfo() {
 
 const Home: React.FC = () => {
   return (
-    <Stack direction="vertical" gap={5}>
-      <Container className='d-flex flex-column align-items-center gap-5'>
-        <h1 style={{ fontSize: 'min(160px, 20vmin)', textAlign: 'center', fontFamily: 'Comic CAT' }}>Kotry Koffi</h1>
-        <Image src={require('../assets/img/image_home.avif')} alt="Kotry Koffi bag" style={{aspectRatio: 1}} fluid />
-        <p>
-          Les meilleurs biscuits au marc de café ! 
-          <br/><br/>
-          Que ce soit pour accompagner votre café matinal ou pour une collation raffinée l'après-midi, nos biscuits au marc de café sont le choix parfait pour tous vos moments gourmands.
-        </p>
-        <Button
-          style={{width: 'fit-content'}}
-          variant="primary"
-          onClick={() => {window.location.href="https://www.instagram.com/le_kotry?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==";}}
-        >
-          ACHETEZ-LES ICI !
-        </Button>
+    <Stack direction="vertical">
+      <Container className='d-flex flex-row align-items-center'  style={{ height: 'calc(100vh - 160px - 75px)' }}>
+        <Row xs={1} md={2} className="g-0 justify-content-center" style={{ height: '100%' }}>
+          <Col className="d-flex flex-column justify-content-evenly justify-content-md-center gap-md-5 align-items-start z-1" style={{ height: '100%' }}>
+            <h1 className="text-md-start text-center" style={{ fontSize: 'min(140px, 10vmin)', width: '100%', fontFamily: 'Comic CAT' }}>
+              Kotry Koffi
+            </h1>
+            {/* Conditionally hide image on md and higher screens */}
+            <img
+              className="d-md-none"
+              src={require('../assets/img/image_home.avif')}
+              alt="Kotry Koffi bag"
+              style={{
+                objectFit: 'contain',
+                width: '100%',
+                maxHeight: '50%',
+              }}
+            />
+            <p>
+              <span>Les meilleurs biscuits au marc de café !</span>
+              <p style={{textWrap: 'balance'}}>
+                Que ce soit pour accompagner votre café matinal ou pour une collation raffinée l'après-midi,
+                nos biscuits au marc de café sont le choix parfait pour tous vos moments gourmands.
+              </p>
+              <Button
+                className='mt-md-2'
+                style={{ width: 'fit-content' }}
+                variant="primary"
+                onClick={() => { window.location.href = "https://www.instagram.com/le_kotry?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="; }}
+              >
+                ACHETEZ-LES ICI !
+              </Button>
+            </p>
+          </Col>
+          {/* Image column only on md and larger screens */}
+          <Col className="d-none d-md-flex align-items-center justify-content-center" style={{
+                height: '100%',
+              }}>
+            <Image
+              src={require('../assets/img/image_home.avif')}
+              alt="Kotry Koffi bag"
+              style={{
+                objectFit: 'cover',
+                height: '100%',
+                maxHeight: '550px',
+              }}
+              fluid
+            />
+          </Col>
+        </Row>
       </Container>
+
       <div style={{
+        marginBottom: '64px',
         width: '100%',
         height: '160px',
         backgroundImage: `url(${banner})`,

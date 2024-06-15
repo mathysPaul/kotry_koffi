@@ -47,7 +47,7 @@ const Toggle: React.FC = () => {
 
 const Navigation: React.FC = () => {
   return (
-    <Navbar expand="lg" className="bg-body-tertiary" sticky="top" style={{ borderBottom: 'solid 2px #ebebeb' }}>
+    <Navbar expand="lg" className="bg-body-tertiary" style={{ borderBottom: 'solid 2px #ebebeb' }}>
       <Container>
         <Navbar.Brand href="#/">
           <img src={logo} alt="Logo" style={{height: '3rem'}}/>

@@ -8,8 +8,7 @@ type LayoutProps = {
 const Layout: React.FC<LayoutProps> = (props) => {
   return (
     <>
-      <header>
-        <span id="top"/>
+      <header className='z-2' style={{position: 'sticky', top: 0}}>
         <Navigation />
       </header>
       <body style={{ minHeight: '100vh'}}>
