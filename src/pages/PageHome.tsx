@@ -52,7 +52,7 @@ const Home: React.FC = () => {
   return (
     <Stack direction="vertical" gap={5}>
       <Container className='d-flex flex-column align-items-center gap-5'>
-        <h1 style={{ fontSize: 'min(160px, 20vmin)', textAlign: 'center', fontFamily: 'Comic CAT' }}>Kotry Koffi</h1>
+        <h1 style={{ fontSize: 'min(160px, 20vmin)', textAlign: 'center', fontFamily: 'Comic CAT' }}>Kotry Koffi #1</h1>
         <Image src={require('../assets/img/image_home.avif')} alt="Kotry Koffi bag" style={{aspectRatio: 1}} fluid />
         <p>
           Les meilleurs biscuits au marc de café ! 
