@@ -3,6 +3,7 @@ import {
   Container,
   Nav,
   Navbar,
+  Image
 } from 'react-bootstrap';
 import logo from '../logo.svg';
 
@@ -10,7 +11,7 @@ const Toggle: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const toggleBarHeight = 0.2;
   const toggleBarWidth = 2;
-  const toggleBarColor = 'black';
+  const toggleBarColor = '#1D1D1B';
 
   const toggleClick = () => {
     setIsOpen(!isOpen);
@@ -50,7 +51,7 @@ const Navigation: React.FC = () => {
     <Navbar expand="lg" className="bg-body-tertiary" style={{ borderBottom: 'solid 2px #ebebeb' }}>
       <Container>
         <Navbar.Brand href="#/">
-          <img src={logo} alt="Logo" style={{height: '3rem'}}/>
+          <Image src={logo} alt="Logo" style={{height: '3rem'}}/>
         </Navbar.Brand>
         <Toggle/>
         <Navbar.Collapse id="basic-navbar-nav">

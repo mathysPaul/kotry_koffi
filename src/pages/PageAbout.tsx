@@ -7,37 +7,39 @@ import {
 import Layout from '../components/Layout'
 
 const AboutUs: React.FC = () => {
+
+  const paragraphs = [
+    "Bonjour !",
+    "Bienvenue chez Kotry Koffi, dans notre kot étudiant à l'initiative unique : transformer le marc de café usagé en délicieux biscuits écoresponsables. Ce projet innovant a germé dans notre kot à Liège, sous l'impulsion de Loïs Destatte, étudiant passionné en communication visuelle et graphique à Saint-Luc Liège.",
+    "Loïs, surnommé affectueusement le \"Papa du kot\", est le cœur créatif derrière Kotry Koffi. Il a façonné l’identité visuelle et graphique autour des souvenirs, des anecdotes et des rencontres qui marquent notre vie commune.",
+    "Chez Kotry Koffi, nous sommes animés par le désir de proposer des produits savoureux tout en racontant l'histoire de notre kot. Nos biscuits, en constante évolution, sont le reflet de notre vie et de notre engagement envers la durabilité.",
+    "Nous vous invitons à plonger dans notre univers, à savourer nos créations et à rejoindre notre aventure gourmande et durable. Chaque biscuit que nous vous proposons est une invitation à partager notre quotidien et à découvrir notre passion.",
+    "Rejoignez-nous et laissez-vous charmer par la magie de Kotry Koffi, où chaque saveur est une histoire et chaque biscuit un souvenir à se remémorer.",
+  ];
+
+  const images = [
+    { src: require('../assets/img/eco-responsable.webp'), alt: 'Kotry Koffi Art 1' },
+    { src: require('../assets/img/coffee.webp'), alt: 'Kotry Koffi Art 2' },
+    { src: require('../assets/img/good.webp'), alt: 'Kotry Koffi Art 3' },
+    { src: require('../assets/img/friends.webp'), alt: 'Kotry Koffi Art 4' },
+    { src: require('../assets/img/skate.webp'), alt: 'Kotry Koffi Art 4' },
+    { src: require('../assets/img/woman.webp'), alt: 'Kotry Koffi Art 4' },
+  ];
+
   return (
-    <Container style={{backgroundColor: 'white'}}>
+    <Container>
       <h1 style={{ fontSize: 'min(160px, 20vmin)', textAlign: 'center', fontFamily: 'Comic CAT' }}>Kotry Koffi</h1>
-      <p>
-        Bonjour !
-        <br/><br/>
-        Nous sommes Kotry Koffi, un kot unique en son genre qui a eu l'idée de réutiliser le marc de café de nos cafés pour en faire des biscuits délicieux et respectueux de l'environnement. Ce projet  est né au sein de notre kot étudiant, grâce à l'inspiration et au travail de Loïs Destatte.
-        <br/><br/>
-        Loïs, étudiant en communication visuelle et graphique à Saint-Luc Liège en Belgique, est l'âme créatrice de Kotry Koffi. Connu affectueusement comme le "Papa du kot", Loïs a conçu et développé l’identité artistique avec une sensibilité particulière aux souvenirs , aux histoires et aux rencontres marquantes de notre vie en collocs.
-        <br/><br/>
-        Le Kotry Koffi est un projet sentimental, une manière de laisser une trace tangible de ses années de colocation et de vie étudiante.
-        <br/><br/>
-        À travers Kotry Koffi, nous voulons non seulement proposer des produits gourmands et innovants, mais aussi raconter l'histoire de notre kot.
-        <br/><br/>
-        Notre aventure est en constante évolution, tout comme nos biscuits qui évoluent avec nous. Nous vous invitons à découvrir notre univers, à savourer nos créations et à faire partie de cette belle histoire que nous écrivons jour après jour.
-        <br/><br/>
-        Rejoignez nous dans cette aventure gourmande et durable, et laissez vous emporter par la magie de Kotry Koffi, où chaque biscuit raconte une histoire et chaque saveur est une invitation au voyage dans notre vie étudiante.
-      </p>
+      {paragraphs.map((paragraph, index) => (
+        <p key={index}>
+          {paragraph}
+        </p>
+      ))}
       <Row xs={1} md={2} lg={3}>
-        <Col className="p-0 d-flex">
-          <Image src={require('../assets/img/image_gallery_0.avif')} alt="Kotry Koffi Art 1" style={{aspectRatio: 1}} fluid />
-        </Col>
-        <Col className="p-0 d-flex">
-          <Image src={require('../assets/img/image_gallery_1.avif')} alt="Kotry Koffi Art 2" style={{aspectRatio: 1}} fluid />
-        </Col>
-        <Col className="p-0 d-flex">
-          <Image src={require('../assets/img/image_gallery_2.avif')} alt="Kotry Koffi Art 3" style={{aspectRatio: 1}} fluid />
-        </Col>
-        <Col className="p-0 d-flex">
-          <Image src={require('../assets/img/image_gallery_3.avif')} alt="Kotry Koffi Art 4" style={{aspectRatio: 1}} fluid />
-        </Col>
+        {images.map((image, index) => (
+          <Col key={index} className="p-0 d-flex" style={{backgroundColor: 'transparent'}}>
+            <Image src={image.src} alt={image.alt} style={{aspectRatio: 1}} fluid />
+          </Col>
+        ))}
       </Row>
     </Container>
   );

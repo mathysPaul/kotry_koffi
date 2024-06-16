@@ -3,8 +3,17 @@
 /////////////////////////////////////////
 // Theme
 /////////////////////////////////////////
-$btn-font-family: 'Comic CAT';
-$primary: #1a1917;
+$grey-100: #FFFFFF;
+$grey-200: #E3E3E3;
+$grey-300: #C7C7C6;
+$grey-400: #8E8E8D;
+$grey-500: #1D1D1B;
+$grey-600: #161615;
+$grey-700: #0F0F0E;
+$grey-800: #080807;
+$grey-900: #000000;
+
+$primary: $grey-500;
 $theme-colors: (
 	"primary": $primary,
 );
@@ -18,16 +27,34 @@ $background: $primary;
 $border: $background;
 
 button.btn-primary {
+	font-family: 'Comic CAT';
   @include button-variant(
-	$background,
-	$border,
-	$color: color-contrast($background),
-	$hover-background: black,
-	$hover-color: white,
-	$active-background: transparent,
-	$active-color: $primary,
-	$active-border: $primary,
+		$background,
+		$border,
+		$color: color-contrast($background),
+		$hover-background: $grey-800,
+		$hover-color: $grey-100,
+		$active-background: transparent,
+		$active-color: $primary,
+		$active-border: $primary,
   );
+}
+
+// Button link
+$background: transparent;
+$border: $background;
+a.btn-link {
+	text-decoration-color: $grey-300;
+	text-decoration-thickness: 2px;
+	@include button-variant(
+		$background,
+		$border,
+		$color: $primary,
+	);
+	&:hover {
+		text-decoration-color: $primary;
+	}
+	@include button-size('0', '0', '1rem', '0');
 }
 
 /////////////////////////////////////////
@@ -40,13 +67,13 @@ $accordion-inner-border-radius: 0;
 $accordion-border-width: 0;
 
 // Accordion color
-$accordion-bg:                            #EAEAEA;
-$accordion-button-bg:                     white;
-$accordion-button-active-bg:              $primary;
-$accordion-button-active-color:           white;
+$accordion-bg: $grey-200;
+$accordion-button-bg: $grey-100;
+$accordion-button-active-bg: $primary;
+$accordion-button-active-color: $grey-100;
 
 // Accordion icon
-$accordion-icon-active-color: white;
+$accordion-icon-active-color: $grey-100;
 $accordion-icon-color: $primary;
 $accordion-icon-transform: rotate(0deg);
 $accordion-button-icon: url("data:image/svg+xml,<svg width='7' height='6' viewBox='0 0 7 6' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M3.53711 5.42969C3.27148 5.42969 3.05273 5.39062 2.88086 5.3125C2.81836 4.86719 2.78711 4.42383 2.78711 3.98242C2.78711 3.82617 2.79102 3.66992 2.79883 3.51367C2.61523 3.51367 2.50195 3.50977 2.45898 3.50195C2.23242 3.47852 1.95117 3.4668 1.61523 3.4668C1.2793 3.4668 1.05859 3.45117 0.953125 3.41992L0.871094 3.02734C0.882812 2.94141 0.888672 2.86133 0.888672 2.78711L0.882812 2.58203C0.882812 2.46875 0.900391 2.3457 0.935547 2.21289C1.02148 2.18945 1.11523 2.17773 1.2168 2.17773L1.41602 2.18359L1.60352 2.17188C1.80273 2.15625 2.03125 2.14844 2.28906 2.14844L2.78711 2.16016C2.79492 1.96094 2.79883 1.85156 2.79883 1.83203C2.80273 1.80859 2.81055 1.68555 2.82227 1.46289C2.83398 1.31445 2.83984 1.15039 2.83984 0.970703C2.83984 0.650391 2.85156 0.433594 2.875 0.320312L3.27344 0.238281C3.35938 0.25 3.43945 0.255859 3.51367 0.255859L3.71875 0.244141C3.83203 0.244141 3.95508 0.263672 4.08789 0.302734C4.11523 0.388672 4.12891 0.484375 4.12891 0.589844L4.12305 0.777344L4.13477 0.970703C4.14648 1.15039 4.15234 1.35547 4.15234 1.58594C4.15234 1.76953 4.14844 1.9668 4.14062 2.17773C4.37109 2.17773 4.62305 2.18555 4.89648 2.20117C5.16992 2.21289 5.41016 2.22852 5.61719 2.24805C5.82422 2.26758 5.94336 2.28516 5.97461 2.30078C6.0332 2.41797 6.0625 2.57422 6.0625 2.76953C6.0625 3.02734 6.02734 3.24219 5.95703 3.41406C5.48438 3.48047 5.01562 3.51367 4.55078 3.51367C4.41406 3.51367 4.27734 3.50977 4.14062 3.50195H4.12305C4.12305 3.73242 4.11523 3.98633 4.09961 4.26367C4.08789 4.53711 4.07227 4.77734 4.05273 4.98438C4.03711 5.19141 4.01953 5.30859 4 5.33594C3.87891 5.39844 3.72461 5.42969 3.53711 5.42969Z' fill='#{$accordion-icon-color}'/></svg>");
