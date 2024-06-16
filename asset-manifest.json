@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.4cf3740a.css",
-    "main.js": "/static/js/main.38021ca4.js",
+    "main.js": "/static/js/main.b508e5f9.js",
     "static/js/453.b6095ae8.chunk.js": "/static/js/453.b6095ae8.chunk.js",
     "static/media/Comic_CAT.otf": "/static/media/Comic_CAT.a380a424826d21d30fb7.otf",
     "static/media/image_home.webp": "/static/media/image_home.382a97b0f319f5042ff7.webp",
@@ -11,17 +11,17 @@
     "static/media/eco-responsable.webp": "/static/media/eco-responsable.e2e827622bdbdd89fc20.webp",
     "static/media/skate.webp": "/static/media/skate.a5a3066f4f332ca51cd3.webp",
     "static/media/banner.webp": "/static/media/banner.93ef0167f1addcdbdef5.webp",
-    "static/media/up_cookies.png": "/static/media/up_cookies.5985e93583a4ae44f7e0.png",
     "static/media/coffee.webp": "/static/media/coffee.0474dbb9448fd44c6835.webp",
     "static/media/logo.svg": "/static/media/logo.dd158b5b11314af4190809e1802f71e3.svg",
     "static/media/miam.webp": "/static/media/miam.0173a9fa94f49e25d7f4.webp",
+    "static/media/up_cookies.webp": "/static/media/up_cookies.49de04d9c7eb81b6be4a.webp",
     "index.html": "/index.html",
     "main.4cf3740a.css.map": "/static/css/main.4cf3740a.css.map",
-    "main.38021ca4.js.map": "/static/js/main.38021ca4.js.map",
+    "main.b508e5f9.js.map": "/static/js/main.b508e5f9.js.map",
     "453.b6095ae8.chunk.js.map": "/static/js/453.b6095ae8.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.4cf3740a.css",
-    "static/js/main.38021ca4.js"
+    "static/js/main.b508e5f9.js"
   ]
 }
